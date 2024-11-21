@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pet Adoption</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .pet-card {
+            transform: perspective(1000px);
+            transition: transform 0.3s;
+        }
+        .pet-card:hover {
+            transform: perspective(1000px) rotateY(5deg) translateZ(20px);
+        }
+        .button-pop {
+            transition: transform 0.2s;
+        }
+        .button-pop:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-200 min-h-screen p-8">
+    <div class="max-w-6xl mx-auto" data-aos="fade-down">
+        <h1 class="text-4xl font-bold text-gray-800 mb-8 text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-green-600">
+            Pets Available for Adoption
+        </h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {% for pet in pets %}
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                <img src="{{ pet.image_url }}" alt="{{ pet.name }}" 
+                     class="w-full h-48 object-contain">
+                <div class="p-6">
+                    <h2 class="text-2xl font-bold text-gray-800">{{ pet.name }}</h2>
+                    <p class="text-gray-600">{{ pet.breed }} • {{ pet.age }} years old</p>
+                    <p class="text-gray-500 mt-2">{{ pet.description }}</p>
+                    
+                    <div class="flex gap-3 mt-4">
+                        <a href="{% url 'pets:pet_detail' pet.id %}" class="flex-1">
+                            <button class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                                View Details
+                            </button>
+                        </a>
+                        <a href="{% url 'pets:adoption_form' pet.id %}" class="flex-1">
+                            <button class="w-full bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">
+                                Adopt
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-out-cubic'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Adoption Successful</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            overflow: hidden;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        body::-webkit-scrollbar {
+            display: none; /* Chrome/Safari/Opera */
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .flower {
+            position: absolute;
+            font-size: 24px;
+            animation: flowerFall 4s linear infinite;
+            opacity: 0.8;
+            z-index: 10;
+        }
+        @keyframes flowerFall {
+            0% {
+                transform: translateY(-20vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        .bounce-button {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-pink-50 to-blue-50 min-h-screen flex items-center justify-center">
+    <div class="text-center p-8 relative" data-aos="zoom-in">
+        <div class="mb-8 space-y-8">
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDN1Z3E2Y2wxeWsyOXo2NnBnNzVqbXBnOWRpbDNyYmN0NmZ1ZHJ6eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/3oz8xRF0v9WMAUVLNK/giphy.gif" 
+                 alt="Celebration" 
+                 class="w-48 h-48 mx-auto rounded-full shadow-2xl"
+                 data-aos="flip-left"
+                 data-aos-delay="300">
+            
+            <h1 class="text-6xl font-bold gradient-text" data-aos="fade-up" data-aos-delay="150">
+                Hooray!
+            </h1>
+            
+            <div class="bg-white p-8 rounded-2xl shadow-xl" data-aos="fade-up" data-aos-delay="700">
+                <p class="text-2xl text-gray-700 mb-6">
+                    Congratulations <span class="font-bold text-pink-500">{{ owner }}</span>!
+                    <br>
+                    <span class="font-bold text-blue-500">{{ pet.name }}</span> is now yours.
+                </p>
+                
+                <a href="{% url 'pets:pet_list' %}" class="bounce-button inline-block">
+                    <button class="bg-gradient-to-r from-pink-500 to-blue-500 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105">
+                        Back to Pet List
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: false,
+            mirror: true
+        });
+
+        // Create falling flowers effect
+        function createFlower() {
+            const flowers = ['🌸', '🌺', '🌹', '🌷', '💐', '🌼', '🌻', '🌿', '🍀', '🌱', '🌾', '🌺', '🌸', '🌼', '🌹'];
+            const flower = document.createElement('div');
+            flower.className = 'flower';
+            flower.textContent = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.body.appendChild(flower);
+            
+            setTimeout(() => {
+                flower.remove();
+            }, 4000);
+        }
+
+        // Create flowers continuously
+        setInterval(createFlower, 300);
+        for(let i = 0; i < 10; i++) {
+            createFlower();
+        }
+    </script>
+</body>
+</html>

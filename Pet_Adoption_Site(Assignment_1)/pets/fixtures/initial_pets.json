@@ -1,0 +1,132 @@
+[
+    {
+        "model": "pets.pet",
+        "pk": 1,
+        "fields": {
+            "name": "Bella",
+            "breed": "Labrador",
+            "age": 3,
+            "description": "Friendly and loves to play fetch.",
+            "image_url": "https://images.unsplash.com/photo-1579213838058-c27e5d958012",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 2,
+        "fields": {
+            "name": "Charlie",
+            "breed": "Beagle",
+            "age": 2,
+            "description": "Energetic and great with kids.",
+            "image_url": "https://images.unsplash.com/photo-1505628346881-b72b27e84530",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 3,
+        "fields": {
+            "name": "Max",
+            "breed": "German Shepherd",
+            "age": 4,
+            "description": "Loyal and protective.",
+            "image_url": "https://images.unsplash.com/photo-1589941013453-ec89f33b5e95",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 4,
+        "fields": {
+            "name": "Luna",
+            "breed": "Siberian Husky",
+            "age": 2,
+            "description": "Playful and loves the snow.",
+            "image_url": "https://images.unsplash.com/photo-1605568427561-40dd23c2acea",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 5,
+        "fields": {
+            "name": "Rocky",
+            "breed": "Bulldog",
+            "age": 5,
+            "description": "Gentle giant with a heart of gold.",
+            "image_url": "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 6,
+        "fields": {
+            "name": "Daisy",
+            "breed": "Golden Retriever",
+            "age": 1,
+            "description": "Sweet puppy who loves cuddles.",
+            "image_url": "https://images.unsplash.com/photo-1633722715463-d30f4f325e24",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 7,
+        "fields": {
+            "name": "Cooper",
+            "breed": "Australian Shepherd",
+            "age": 3,
+            "description": "Highly intelligent and loves to herd.",
+            "image_url": "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 8,
+        "fields": {
+            "name": "Milo",
+            "breed": "Poodle",
+            "age": 4,
+            "description": "Smart and hypoallergenic companion.",
+            "image_url": "https://images.unsplash.com/photo-1616149562385-1d84e79478bb",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 9,
+        "fields": {
+            "name": "Bailey",
+            "breed": "Rottweiler",
+            "age": 2,
+            "description": "Calm and excellent guard dog.",
+            "image_url": "https://images.unsplash.com/photo-1654164141066-9f270c81a4f7",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    },
+    {
+        "model": "pets.pet",
+        "pk": 10,
+        "fields": {
+            "name": "Sophie",
+            "breed": "Shih Tzu",
+            "age": 3,
+            "description": "Affectionate lap dog who loves attention.",
+            "image_url": "https://images.unsplash.com/photo-1591768575198-88dac53fbd0a",
+            "is_adopted": false,
+            "created_at": "2024-03-20T00:00:00Z"
+        }
+    }
+]
